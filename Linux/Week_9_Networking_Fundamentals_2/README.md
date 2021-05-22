@@ -4,9 +4,6 @@ April 24, 2021
 
 Week 9
 
-
-### <sup><strong>0M1i1s1s1i<sub>0</sub>o1n0 010**</sup>
-
 **Issue**: Due to the DoS attack, the Empire took down the Resistance's DNS and primary email servers.
 
 
@@ -24,15 +21,8 @@ Your mission:
 
 *   Determine and document the **mail servers** for starwars.com using NSLOOKUP.
     *   Used the following command to determine which mail servers are in use by starwars.com ` nslookup -type=MX starwars.com`
-
-    
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image1.png "image_tooltip")
- \
-
+ 
+![image](https://user-images.githubusercontent.com/76081641/119240297-4669a200-bb14-11eb-8da1-a9e12a50ee84.png)
 
 *   Explain why the Resistance isn't receiving any emails.
     *   The Resistance is not receiving any emails because the network team configured the new primary mail server as `asltx.l.google.com ` and the secondary server as `asltx.2.google.com` . In contrast, the DNS mail records do not indicate either domain, which is the reason why The Resistance is not receiving any email. 
@@ -108,14 +98,6 @@ Your mission:
 
     *   Use the command `nslookup -type=CNAME www.theforce.net`
 
-    
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image2.png "image_tooltip")
- \
-
 
 *   Explain why the sub page of resistance.theforce.net isn't redirecting to theforce.net.
     *   The sub page of resistance.theforce.net is not a canonical name for theforce.net. A canonical name (CNAME) is like an alias for a website.  \
@@ -158,15 +140,6 @@ Your mission:
 
 
      `nslookup -type=NS princessleia.site`
-
-
-    
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image3.png "image_tooltip")
-
 
 *   Document how you would fix the DNS record to prevent this issue from happening again.
     *   To ensure site redundancy, implement a backup DNS name server for princessleia.site.
@@ -239,30 +212,14 @@ aircrack-ng -w /usr/share/wordlists/rockyou.txt darkside.pcap
 
 
 
-        The secret wireless key is dictionary: \
-
-
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image4.png "image_tooltip")
+        The secret wireless key is dictionary: 
 
 
 *   Use the Dark Side's key to decrypt the wireless traffic in Wireshark.
 
-    Input this key into wireshark to decrypt the traffic:
+    Input this key into wireshark to decrypt the traffic.
 
-
-    
-
-<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image5.png "image_tooltip")
- \
-
-
-    *   Three decrypted arp packets in Wireshark: \
+    *   Three decrypted arp packets in Wireshark: 
 
 
 <p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
