@@ -8,11 +8,11 @@ Week 9
 
 
 
-*   The Resistance's network team was able to build and deploy a new DNS server and mail server. \
+*   The Resistance's network team was able to build and deploy a new DNS server and mail server.
 
-*   The new primary mail server is `asltx.l.google.com` and the secondary should be `asltx.2.google.com`. \
+*   The new primary mail server is `asltx.l.google.com` and the secondary should be `asltx.2.google.com`. 
 
-*   The Resistance (starwars.com) is able to send emails but is unable to receive any. \
+*   The Resistance (starwars.com) is able to send emails but is unable to receive any. 
 
 
 Your mission:
@@ -30,16 +30,12 @@ Your mission:
     *   A corrected DNS record would include the appropriate mail exchangers originally configured by the network team. The primary mail exchanger `asltx.l.google.com `will have a priority level of 1 and the secondary mail exchanger `asltx.2.google.com` will have a priority level of 5. 
     *   Corrected record:
 
-        ```
-sysadmin@UbuntuDesktop:~$ nslookup -type=MX starwars.com
+`sysadmin@UbuntuDesktop:~$ nslookup -type=MX starwars.com
 Server:		8.8.8.8
-Address:	      8.8.8.8#53
+Address:	   8.8.8.8#53
 Non-authoritative answer:
 starwars.com	mail exchanger = 1 asltx.l.google.com.
-starwars.com	mail exchanger = 5 asltx.2.google.com.
-```
-
-
+starwars.com	mail exchanger = 5 asltx.2.google.com.`
 
 
 ### Mission 2
@@ -48,11 +44,11 @@ starwars.com	mail exchanger = 5 asltx.2.google.com.
 
 
 
-*   Many of the alert bulletins are being blocked or going into spam folders. \
+*   Many of the alert bulletins are being blocked or going into spam folders. 
 
-*   This is probably due to the fact that theforce.net changed the IP address of their mail server to 45.23.176.21 while your network was down. \
+*   This is probably due to the fact that theforce.net changed the IP address of their mail server to 45.23.176.21 while your network was down. 
 
-*   These alerts are critical to identify pending attacks from the Empire. \
+*   These alerts are critical to identify pending attacks from the Empire. 
 
 
 Your mission:
@@ -62,21 +58,17 @@ Your mission:
 *   Determine and document the SPF for theforce.net using NSLOOKUP.
     *   Utilized the following command to determine the SPF for the force.net
 
-            ` nslookup -type=txt theforce.net` \
+            ` nslookup -type=txt theforce.net`
 
 
 *   Explain why the Force's emails are going to spam.
     *   The Force’s emails are going to spam because the SPF (Sender Policy Framework) DNS record does not show the IP address `45.23.176.21`. 
-        *   An SPF record only accepts emails from trusted IP mail servers and will reject the rest.  \
+        *   An SPF record only accepts emails from trusted IP mail servers and will reject the rest.  
 
 *   Document what a corrected DNS record should be.
     *   Corrected DNS record with the IP address of the mail server:
-
-        ```
-theforce.net	text = "v=spf1 a mx mx:smtp.secureserver.net include:aspmx.googlemail.com ip4:104.156.250.80 ip4:45.63.15.159 ip4:45.63.4.215 ip4:45.23.176.21"
-```
-
-
+    
+`theforce.net	text = "v=spf1 a mx mx:smtp.secureserver.net include:aspmx.googlemail.com ip4:104.156.250.80 ip4:45.63.15.159 ip4:45.63.4.215 ip4:45.23.176.21"`
 
 
 ### Mission 3
@@ -100,21 +92,16 @@ Your mission:
 
 
 *   Explain why the sub page of resistance.theforce.net isn't redirecting to theforce.net.
-    *   The sub page of resistance.theforce.net is not a canonical name for theforce.net. A canonical name (CNAME) is like an alias for a website.  \
+    *   The sub page of resistance.theforce.net is not a canonical name for theforce.net. A canonical name (CNAME) is like an alias for a website.  
 
 *   Document what a corrected DNS record should be.
-    *   A corrected DNS record would include the canonical name resistance.theforce.net as shown below.  \
+    *   A corrected DNS record would include the canonical name resistance.theforce.net as shown below.  
 
-
-        ```
-Server:	8.8.8.8
+`Server:	8.8.8.8
 Address:	8.8.8.8#53
 Non-authoritative answer:
 www.theforce.net	       canonical name = theforce.net.
-resistance.theforce.net  canonical name = theforce.net
-```
-
-
+resistance.theforce.net  canonical name = theforce.net`
 
 
 ## Mission 4
@@ -123,11 +110,11 @@ resistance.theforce.net  canonical name = theforce.net
 
 
 
-*   Fortunately, the DNS server for princessleia.site is backed up and functioning. \
+*   Fortunately, the DNS server for princessleia.site is backed up and functioning. 
 
-*   However, the Resistance was unable to access this important site during the attacks and now they need you to prevent this from happening again. \
+*   However, the Resistance was unable to access this important site during the attacks and now they need you to prevent this from happening again. 
 
-*   The Resistance's networking team provided you with a backup DNS server of: ns2.galaxybackup.com. \
+*   The Resistance's networking team provided you with a backup DNS server of: ns2.galaxybackup.com. 
 
 
 Your mission:
@@ -144,20 +131,12 @@ Your mission:
 *   Document how you would fix the DNS record to prevent this issue from happening again.
     *   To ensure site redundancy, implement a backup DNS name server for princessleia.site.
 
-        ```
-Server:	8.8.8.8
+`Server:	8.8.8.8
 Address:	8.8.8.8#53
 Non-authoritative answer:
 princessleia.site	nameserver = ns25.domaincontrol.com.
 princessleia.site	nameserver = ns26.domaincontrol.com.
-princessleia.site nameserver = ns2.galaxybackup.com
-```
-
-
-
-         \
-
-
+princessleia.site nameserver = ns2.galaxybackup.com`
 
 
 ### <sup><strong><em>⚡≡⚡≡⚡≡⚡M⚡i<sub>⚡</sub>s<sub>⚡</sub>s⚡i⚡o⚡n⚡≡<sub>⚡</sub>5⚡_**</sup>
@@ -166,18 +145,18 @@ princessleia.site nameserver = ns2.galaxybackup.com
 
 
 
-*   You have been provided a network map with a list of planets connected between Batuu and Jedha. \
+*   You have been provided a network map with a list of planets connected between Batuu and Jedha. 
 
-*   It has been determined that the slowness is due to the Empire attacking Planet N. \
+*   It has been determined that the slowness is due to the Empire attacking Planet N. 
 
 
 Your Mission:
 
 
 
-*   View the Galaxy Network Map and determine the OSPF shortest path from Batuu to Jedha. \
+*   View the Galaxy Network Map and determine the OSPF shortest path from Batuu to Jedha. 
 
-*   Confirm your path doesn't include Planet N in its route. \
+*   Confirm your path doesn't include Planet N in its route. 
 
 *   Document this shortest path so it can be used by the Resistance to develop a static route to improve the traffic.
 
@@ -203,16 +182,15 @@ Your Mission:
 
 
 
-*   Figure out the Dark Side's secret wireless key by using Aircrack-ng. \
+*   Figure out the Dark Side's secret wireless key by using Aircrack-ng. 
 aircrack-ng -w /usr/share/wordlists/rockyou.txt darkside.pcap 
 
-    ```
-aircrack-ng -w /usr/share/wordlists/rockyou.txt darkside.pcap 
-```
+  
+`aircrack-ng -w /usr/share/wordlists/rockyou.txt darkside.pcap`
 
 
 
-        The secret wireless key is dictionary: 
+        The secret wireless key is dictionary. 
 
 
 *   Use the Dark Side's key to decrypt the wireless traffic in Wireshark.
