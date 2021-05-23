@@ -125,9 +125,9 @@ Paste your system.sh script edits below:
 
 
 
-2. [Your solution script contents here] **↑** \
+2. [Your solution script contents here] **↑** 
 
-3. Command to make the system.sh script executable: \
+3. Command to make the system.sh script executable: 
 
 ```chmod +x system.sh```
 
@@ -187,9 +187,9 @@ Paste your system.sh script edits below:
 
 
 
-1. Run sudo nano /etc/logrotate.conf to edit the logrotate configuration file. \
- \
- Configure a log rotation scheme that backs up authentication messages to the /var/log/auth.log. \
+1. Run ```sudo nano /etc/logrotate.conf``` to edit the logrotate configuration file. 
+ 
+ Configure a log rotation scheme that backs up authentication messages to the /var/log/auth.log. 
 
     *   Add your config file edits below:
 
@@ -229,7 +229,7 @@ Add the edits made to the configuration file below:
 
 
 
-3. **[Your solution edits here] \
+3. **[Your solution edits here] 
 **
 
 <p id="gdcalert12" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image12.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert13">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
@@ -245,12 +245,12 @@ Add the edits made to the configuration file below:
 
 
 ![alt_text](images/image13.png "image_tooltip")
- \
+ 
 
 
-5. [Your solution edits here]**↑** \
+5. [Your solution edits here]**↑** 
 
-6. Command to restart auditd: \
+6. Command to restart auditd: 
 
 
 <p id="gdcalert14" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image14.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert15">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
@@ -258,8 +258,7 @@ Add the edits made to the configuration file below:
 
 ![alt_text](images/image14.png "image_tooltip")
 
-7. Command to list all auditd rules: \
-
+7. Command to list all auditd rules: 
 
 <p id="gdcalert15" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image15.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert16">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
@@ -284,10 +283,10 @@ Add the edits made to the configuration file below:
 
 
 ![alt_text](images/image17.png "image_tooltip")
- \
+ 
 
 
-10. Command to use auditd to watch /var/log/cron: \
+10. Command to use auditd to watch /var/log/cron: 
 
 
 <p id="gdcalert18" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image18.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert19">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
@@ -295,7 +294,7 @@ Add the edits made to the configuration file below:
 
 ![alt_text](images/image18.png "image_tooltip")
 
-11. Command to verify auditd rules: \
+11. Command to verify auditd rules: 
 
 
 <p id="gdcalert19" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image19.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert20">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
@@ -322,7 +321,7 @@ Add the edits made to the configuration file below:
 
 ![alt_text](images/image20.png "image_tooltip")
 
-2. Command to check the disk usage of the system journal unit since the most recent boot: \
+2. Command to check the disk usage of the system journal unit since the most recent boot: 
 
 
 <p id="gdcalert21" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image21.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert22">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
@@ -330,7 +329,7 @@ Add the edits made to the configuration file below:
 
 ![alt_text](images/image21.png "image_tooltip")
 
-3. Command to remove all archived journal files except the most recent two: \
+3. Command to remove all archived journal files except the most recent two: 
 
 
 <p id="gdcalert22" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image22.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert23">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
@@ -356,7 +355,7 @@ Add the edits made to the configuration file below:
 ![alt_text](images/image24.png "image_tooltip")
 
 
-4. Command to filter all log messages with priority levels between zero and two, and save output to /home/sysadmin/Priority_High.txt
+4. Command to filter all log messages with priority levels between zero and two, and save output to ```/home/sysadmin/Priority_High.txt```
 
 
 
