@@ -58,4 +58,5 @@ April 3, 2021
 2. Escalate your privileges to the root user. Use John to crack the entire /etc/shadow file: 
 
   ``` john /etc/shadow```
+  
 ![image](https://user-images.githubusercontent.com/76081641/119246475-8bf39280-bb47-11eb-922c-5aa117040942.png)
