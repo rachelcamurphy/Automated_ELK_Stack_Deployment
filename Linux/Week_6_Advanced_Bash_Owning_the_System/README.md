@@ -24,11 +24,15 @@ April 3, 2021
 
 5. Test that sudo access works without your password: 
 
+![image](https://user-images.githubusercontent.com/76081641/119246439-2bfcec00-bb47-11eb-91d4-f1e50c9c8c5e.png)
+
 
 **Step 2: Smooth Sailing**
 
 1. Edit the sshd_config file: ```nano sshd_config```
 2. Add port 2222 in the ```sshd_config``` file.
+
+![image](https://user-images.githubusercontent.com/76081641/119246450-4afb7e00-bb47-11eb-932a-539c4c206fa4.png)
 
 **Step 3: Testing Your Configuration Update**
 
@@ -44,7 +48,6 @@ April 3, 2021
 4. Use sudo to switch to the root user: ```sudo su```
 
 
-
 **Step 4: Crack All the Passwords**
 
 
@@ -55,3 +58,4 @@ April 3, 2021
 2. Escalate your privileges to the root user. Use John to crack the entire /etc/shadow file: 
 
   ``` john /etc/shadow```
+![image](https://user-images.githubusercontent.com/76081641/119246475-8bf39280-bb47-11eb-922c-5aa117040942.png)
