@@ -67,7 +67,7 @@ Extracted Hollywood IP Addresses from excel file provided.
 
 Ran `fping -g` against all IPs to determine which hosts were responding.
 
-![image](https://user-images.githubusercontent.com/76081641/119249478-6f168980-bb5e-11eb-992a-9c9ac83a8c0a.png)
+:![image](https://user-images.githubusercontent.com/76081641/119249478-6f168980-bb5e-11eb-992a-9c9ac83a8c0a.png):
 
 ![image](https://user-images.githubusercontent.com/76081641/119249497-966d5680-bb5e-11eb-8a77-91185069f2ac.png)
 
@@ -122,32 +122,6 @@ Ran `fping -g` against all IPs to determine which hosts were responding.
 
 ## Phase 3: _"I Feel a DNS Change Comin' On"_
 
-![image](https://user-images.githubusercontent.com/76081641/119249605-7a1de980-bb5f-11eb-8aff-f9e2f6f92c80.png)
-
-
-
-
-
-<p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image8.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image8.png "image_tooltip")
-
-
-
-
-<p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image9.png "image_tooltip")
-
-
-<p id="gdcalert10" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image10.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert11">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image10.png "image_tooltip")
-
-
 
 ### Summary: 
 
@@ -176,60 +150,23 @@ Steps & Commands:
 
 Locate secretlogs.pcapng file:
 
+```ssh jimi@167.172.144.11```
 
-```
-ssh jimi@167.172.144.11
-```
+```cd etc```
 
+```cat packetcaptureinfo.txt```
 
+Visited this website and downloaded the secretlogs.pcap file. 
 
-```
-cd etc
-```
-
-
-
-```
-cat packetcaptureinfo.txt
-```
-
-
-**Visited this website and downloaded the secretlogs.pcap file. **
-
-
-
-<p id="gdcalert11" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image11.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert12">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image11.png "image_tooltip")
-
-
-
-
-<p id="gdcalert12" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image12.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert13">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image12.png "image_tooltip")
-
-
-
-#### Import the secretlogs.pcapng file into Wireshark
-
-
-
-<p id="gdcalert13" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image13.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert14">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image13.png "image_tooltip")
+# Import the secretlogs.pcapng file into Wireshark
 
 
 Utilized the arp filter to discover a possible ARP spoofing attack and utilized the http.request.method == “POST” filter and discovered a suspicious message. 
 
 
-### Summary (ARP):
+## Summary (ARP):
 
-
-### The filter used in Wireshark after importing the packetcaptureinfo.txt file was _arp_. A potential vulnerability: address resolution protocol (ARP) spoofing was found. 
+The filter used in Wireshark after importing the packetcaptureinfo.txt file was _arp_. A potential vulnerability: address resolution protocol (ARP) spoofing was found. 
 
 After locating and analyzing the suspicious pcap file on wireshark, a duplicate IP address was found after filtering through the ARP packets. Duplicate IP addresses can be a vulnerability known as address resolution protocol (ARP) spoofing. 
 
@@ -247,7 +184,7 @@ The duplicate IP is 192.168.47.200. The Hollywood server is utilizing this IP wi
 
 ![image](https://user-images.githubusercontent.com/76081641/119249674-12b46980-bb60-11eb-8702-355e16c8c8e2.png)
 
-### Summary (HTTP):
+## Summary (HTTP):
 
 After filtering for http.request.method == “POST” on Wireshark, the following source IP 10.0.2.15 and Destination IP 104.18.126.89 were corresponding using forms.yola.com.
 
