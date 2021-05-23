@@ -69,12 +69,11 @@ March 29, 2021
 ### **Step 2: Create, Manage, and Automate Cron Jobs**
 
 
-
 1. Cron job for backing up the /var/log/auth.log file:
 
 ```0 6 * * 3 tar czf /var/log/auth.log/auth_backup.tgz > /var/log/auth.log```
----
 
+---
 
 
 ### **Step 3: Write Basic Bash Scripts**
@@ -170,172 +169,77 @@ Paste your system.sh script edits below:
 
 
 
-1. Command to verify auditd is active: `systemctl status auditd` \
+1. Command to verify auditd is active: `systemctl status auditd` 
 
-2. Command to set number of retained logs and maximum log file size: \
+2. Command to set number of retained logs and maximum log file size: `sudo nano /etc/audit/auditd.conf`
 
+```
+freq = 50
+max_log_file = 35
+num_logs = 7
+priority_boost = 4
+disp_qos = lossy
+dispatcher = /sbin/auditspd
+name_format = NONE 
 
-
-
-<p id="gdcalert11" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image11.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert12">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image11.png "image_tooltip")
-
-
-Add the edits made to the configuration file below:
-
-
-
-3. **[Your solution edits here] 
-**
-
-<p id="gdcalert12" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image12.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert13">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image12.png "image_tooltip")
+```
 
 4. **Command using auditd to set rules for /etc/shadow, /etc/passwd and /var/log/auth.log:**
 
-    
+    ```
+    -w /etc/shadow -p wra -k hashpass_audit
+    -w /etc/passwd -p wra -k userpass_audit
+    -w /var/log/auth.log -p wra -k authlog_audit
+    ```
 
-<p id="gdcalert13" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image13.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert14">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+5. Command to restart auditd: 
 
+```sudo service auditd restart```
 
-![alt_text](images/image13.png "image_tooltip")
- 
+6. Command to list all auditd rules: 
 
-
-5. [Your solution edits here]**↑** 
-
-6. Command to restart auditd: 
-
-
-<p id="gdcalert14" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image14.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert15">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image14.png "image_tooltip")
-
-7. Command to list all auditd rules: 
-
-<p id="gdcalert15" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image15.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert16">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image15.png "image_tooltip")
+```cat /etc/audit/audit.rules```
 
 8. Command to produce an audit report: ```sudo auditctl -l```
-
-    
-
-<p id="gdcalert16" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image16.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert17">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image16.png "image_tooltip")
 
 
 9. Create a user with sudo useradd attacker and produce an audit report that lists account modifications:
 
-     
-
-<p id="gdcalert17" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image17.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert18">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image17.png "image_tooltip")
- 
-
+```sudo useradd attacker```
 
 10. Command to use auditd to watch /var/log/cron: 
 
-
-<p id="gdcalert18" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image18.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert19">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image18.png "image_tooltip")
+```sudo auditctl -w /var/log/cron```
 
 11. Command to verify auditd rules: 
 
-
-<p id="gdcalert19" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image19.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert20">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image19.png "image_tooltip")
-
-
-
-
----
-
-
+```sudo auditctl -l```
 
 ### **Bonus (Research Activity): Perform Various Log Filtering Techniques**
 
+1. Command to return journalctl messages with priorities from emergency to error: 
 
-
-1. Command to return journalctl messages with priorities from emergency to error: \
-
-
-<p id="gdcalert20" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image20.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert21">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image20.png "image_tooltip")
+```journalctl -p err -b```
 
 2. Command to check the disk usage of the system journal unit since the most recent boot: 
 
-
-<p id="gdcalert21" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image21.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert22">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image21.png "image_tooltip")
+```journalctl --disk-usage``
 
 3. Command to remove all archived journal files except the most recent two: 
 
-
-<p id="gdcalert22" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image22.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert23">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image22.png "image_tooltip")
-
-
-    
-
-<p id="gdcalert23" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image23.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert24">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image23.png "image_tooltip")
-
-
-
-    
-
-<p id="gdcalert24" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image24.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert25">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image24.png "image_tooltip")
-
+```sudo journalctl --rotate --vacuum-time=1s```
+```sudo journalctl --rotate --vacuum-files=2```
 
 4. Command to filter all log messages with priority levels between zero and two, and save output to ```/home/sysadmin/Priority_High.txt```
 
-
-
-<p id="gdcalert25" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image25.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert26">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image25.png "image_tooltip")
-
-
-
+```sudo journalctl -p 0..2 > /home/sysadmin/Priority_High.txt```
 
 5. Command to automate the last command in a daily cronjob. Add the edits made to the crontab file below: 
 
-    
-
-<p id="gdcalert26" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image26.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert27">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image26.png "image_tooltip")
-
-
-
+```
+0 6 * * 3 tar czf /var/log/auth.log/auth_backup.tgz > /var/log/auth.log
+0 0 * * * journalctl -p 0..2 >> /home/sysadmin/Priority_High.txt 
+```
 References: 
 
 [https://stackoverflow.com/questions/984204/shell-command-to-tar-directory-excluding-certain-files-folders](https://stackoverflow.com/questions/984204/shell-command-to-tar-directory-excluding-certain-files-folders)
