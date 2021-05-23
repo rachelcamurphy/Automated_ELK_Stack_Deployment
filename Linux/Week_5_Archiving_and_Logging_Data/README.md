@@ -20,7 +20,7 @@ March 29, 2021
 ```tar xvf ~/Downloads/TarDocs.tar```
 
 
-2. Command to **create** the Javaless_Doc.tar archive from the TarDocs/ directory, while excluding the TarDocs/Documents/Java directory: \
+2. Command to **create** the Javaless_Doc.tar archive from the TarDocs/ directory, while excluding the TarDocs/Documents/Java directory: 
 
 
     Starting in Projects directory
@@ -38,13 +38,7 @@ March 29, 2021
 
 *   Command to create an incremental archive called logs_backup_tar.gz with only changed files to snapshot.file for the /var/log directory
 
-
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image1.png "image_tooltip")
-
+```tar --listed-incremental=snapshot.file -cvzf logs_backup.tar.gz /var/log```
 
 **Bonus Testing Backup Script:**
 
@@ -63,7 +57,7 @@ March 29, 2021
 
 *   Why wouldn't you use the options -x and -c at the same time with tar? 
 
-    **You wouldn’t use -x and -c at the same time because -x means to extract an archive and -c means to create an archive. **
+    - You wouldn’t use -x and -c at the same time because -x means to extract an archive and -c means to create an archive. 
 
 
 
@@ -78,16 +72,7 @@ March 29, 2021
 
 1. Cron job for backing up the /var/log/auth.log file:
 
-
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image3.png "image_tooltip")
-
-
-
-
+```0 6 * * 3 tar czf /var/log/auth.log/auth_backup.tgz > /var/log/auth.log```
 ---
 
 
@@ -100,42 +85,15 @@ March 29, 2021
 
 ```mkdir -p ~/backup5/{freemem,diskuse,openlist,freedisk}```
 
-
-
-
-
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image4.png "image_tooltip")
-
-
 Paste your system.sh script edits below: 
-
-
-
-
-<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image5.png "image_tooltip")
-
-
-*Modified to > stdout.
-
-
-
-2. [Your solution script contents here] **↑** 
+```free -h >> ~/backups/freemem/free_mem.txt```
+```du -h >> ~/backups/diskuse/disk_usage.txt```
+```lsof >> ~/backups/openlist/open_list.txt```
+```df -h >> ~/backups/freedisk/free_disk.txt```
 
 3. Command to make the system.sh script executable: 
 
 ```chmod +x system.sh```
-
-
-
-**Optional**
-
-
 
 *   Commands to test the script and confirm its execution:
 
