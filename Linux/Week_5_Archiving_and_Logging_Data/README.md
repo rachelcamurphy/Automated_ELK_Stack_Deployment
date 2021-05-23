@@ -17,9 +17,7 @@ March 29, 2021
 
 1. Command to **extract** the TarDocs.tar archive to the current directory:
 
-    ```
-tar xvf ~/Downloads/TarDocs.tar 
-```
+```tar xvf ~/Downloads/TarDocs.tar```
 
 
 2. Command to **create** the Javaless_Doc.tar archive from the TarDocs/ directory, while excluding the TarDocs/Documents/Java directory: \
@@ -27,23 +25,12 @@ tar xvf ~/Downloads/TarDocs.tar
 
     Starting in Projects directory
 
-
-    ```
-tar cvf Javaless_Doc.tar --exclude='TarDocs/Documents/Java/*' TarDocs/Documents/*
-```
+```tar cvf Javaless_Doc.tar --exclude='TarDocs/Documents/Java/*' TarDocs/Documents/*```
 
 
 3. Command to ensure Java/ is not in the new Javaless_Docs.tar archive:
 
-    ```
-tar tvf Javaless_Docs.tar | grep Java
-```
-
-
-
-     \
-
-
+```tar tvf Javaless_Docs.tar | grep Java```
 
 **Bonus**
 
@@ -111,9 +98,7 @@ tar tvf Javaless_Docs.tar | grep Java
 
 1. Brace expansion command to create the four subdirectories:
 
-    ```
-mkdir -p ~/backup5/{freemem,diskuse,openlist,freedisk}
-```
+```mkdir -p ~/backup5/{freemem,diskuse,openlist,freedisk}```
 
 
 
@@ -125,7 +110,7 @@ mkdir -p ~/backup5/{freemem,diskuse,openlist,freedisk}
 ![alt_text](images/image4.png "image_tooltip")
 
 
-Paste your system.sh script edits below: \
+Paste your system.sh script edits below: 
 
 
 
@@ -144,10 +129,7 @@ Paste your system.sh script edits below: \
 
 3. Command to make the system.sh script executable: \
 
-
-    ```
-chmod +x system.sh 
-```
+```chmod +x system.sh```
 
 
 
@@ -157,9 +139,7 @@ chmod +x system.sh
 
 *   Commands to test the script and confirm its execution:
 
-    ```
-sudo ./system.sh
-```
+    ```sudo ./system.sh```
 
 
 
