@@ -200,48 +200,11 @@ aircrack-ng -w /usr/share/wordlists/rockyou.txt darkside.pcap
     *   Three decrypted arp packets in Wireshark: 
 
 
-<p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image6.png "image_tooltip")
-
-    *   Host IP Addresses and MAC Addresses by looking at the decrypted ARP traffic. \
-
-
-<p id="gdcalert7" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image7.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert8">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image7.png "image_tooltip")
+    *   Host IP Addresses and MAC Addresses by looking at the decrypted ARP traffic. 
 
 *   Document these IP and MAC Addresses, as the resistance will use these IP addresses to launch a retaliatory attack: 
     *   Three ARP packets were discovered after analyzing the decrypted darkside.pcap file in Wireshark. 
         *   Looking through all three arp packets for the Host IP addresses and MAC addresses:
-
-            
-
-<p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image8.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image8.png "image_tooltip")
-
-
-
-            
-
-<p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image9.png "image_tooltip")
-
-
-
-            
-
-<p id="gdcalert10" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image10.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert11">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image10.png "image_tooltip")
-
 
 *   Documentation of decrypted MAC & IP addresses:
 
@@ -269,40 +232,4 @@ aircrack-ng -w /usr/share/wordlists/rockyou.txt darkside.pcap
    </td>
   </tr>
 </table>
-
-
- \
-
-
-
-### <sup>✨</sup>M<sup>✨</sup>i<sup>✨</sup>s<sup>✨</sup>s<sup>🌟</sup>i<sub>✨</sub>o<sup>🌟</sup>n<sup>✨</sup> <sub>✨</sub>7<sup>✨</sup>
-
-As a thank you for saving the galaxy, the Resistance wants to send you a secret message!
-
-Your Mission:
-
-
-
-*   View the DNS record from Mission #4. \
-
-
-<p id="gdcalert11" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image11.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert12">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image11.png "image_tooltip")
-
-
-     \
-
-
-*   Take a screenshot of the results. \
-
-
-<p id="gdcalert12" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image12.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert13">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image12.png "image_tooltip")
-
-
- \
 
