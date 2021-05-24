@@ -16,16 +16,15 @@ The concept of defense in depth can be broken down into three different security
 
 
 1. Walls, bollards, fences, guard dogs, cameras, and lighting are what type of security control? 
- 
-**_ Answer: Physical 
-_**
+   Physical
+   
 2. Security awareness programs, BYOD policies, and ethical hiring practices are what type of security control? 
  
- **_Answer: Social/Administrative 
-_**
+   Social/Administrative 
+
 3. Encryption, biometric fingerprint readers, firewalls, endpoint security, and intrusion detection systems are what type of security control? 
  
- **_Answer: Technical_** 
+   Technical 
 
 
 
@@ -35,12 +34,11 @@ _**
 
 1. What's the difference between an IDS and an IPS? 
  
-An Intrusion Detection System (IDS) **_ONLY _**monitors for security breaches and alerts external parties/admin. An Intrusion Prevention System monitors for security breaches **_AND _**will stop attacks / attackers.  
+An Intrusion Detection System (IDS) ONLY monitors for security breaches and alerts external parties/admin. An Intrusion Prevention System monitors for security breaches AND will stop attacks / attackers.  
 
 2. What's the difference between an Indicator of Attack and an Indicator of Compromise? 
  
-An **Indicator of Attack** occurs in real time and is proactively being monitored before the attacker has fully breached the system. An **Indicator of Compromise** is a reactive approach to a system that has already been breached. IoCs are used by defenders to determine an attacker’s Techniques, Tactics, and Procedures (TTPs).  
-
+An Indicator of Attack occurs in real time and is proactively being monitored before the attacker has fully breached the system. An Indicator of Compromise is a reactive approach to a system that has already been breached. IoCs are used by defenders to determine an attacker’s Techniques, Tactics, and Procedures (TTPs).  
 
 
 #### **The Cyber Kill Chain**
@@ -49,18 +47,19 @@ Name each of the seven stages for the Cyber Kill chain and provide a brief examp
 
 
 
-1. Stage 1: **Reconnaissance **- researching your target and gathering information about them. For example: Looking through their LinkedIn profile or Twitter feed.  
+1. Stage 1: Reconnaissance - researching your target and gathering information about them. For example: Looking through their LinkedIn profile or Twitter feed.  
 
-2. Stage 2: **Weaponization **- coding a virus in order to infiltrate a network.  
+2. Stage 2: Weaponization - coding a virus in order to infiltrate a network.  
 
-3. Stage 3: **Delivery **- sending the virus to the victim with a phishing email. 
+3. Stage 3: Delivery - sending the virus to the victim with a phishing email. 
 
-4. Stage 4: **Exploitation **- the virus program code will run and exploit the victim’s vulnerabilities.  
+4. Stage 4: Exploitation - the virus program code will run and exploit the victim’s vulnerabilities.  
 
-5. Stage 5: **Installation **- the virus finds and installs a backdoor for the attacker to gain access to the network. 
+5. Stage 5: Installation - the virus finds and installs a backdoor for the attacker to gain access to the network. 
 
-6. Stage 6: **Command & Control (C2)** - the virus has successfully provided the attacker with full access to the network. 
-7. Stage 7:** Actions on Objectives - ** the attacker begins stealing credit card numbers and laundering money from user accounts.  
+6. Stage 6: Command & Control (C2) - the virus has successfully provided the attacker with full access to the network. 
+
+7. Stage 7: Actions on Objectives - the attacker begins stealing credit card numbers and laundering money from user accounts.  
 
 
 
@@ -220,22 +219,11 @@ Next, lists all currently configured firewall rules. This will give you a good i
 
 Run the commands that creates Web, Sales and Mail zones. 
 
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image1.png "image_tooltip")
-
-
-Reload firewall
-
-
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image2.png "image_tooltip")
-
+   `sudo firewall-cmd --permanent --new-zone=web`
+   `sudo firewall-cmd --permanent --new-zone=sales`
+   `sudo firewall-cmd --permanent --new-zone=mail`
+   
+ Reload firewall `sudo firewall-cmd --reload`
 
 
 #### **Set the zones to their designated interfaces:**
@@ -249,14 +237,6 @@ Run the commands that sets your eth interfaces to your zones.
 `sudo firewall-cmd --zone=mail --change-interface=eth3`
 
 
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image3.png "image_tooltip")
- 
-
-
-
 #### **Add services to the active zones:**
 
 
@@ -264,7 +244,7 @@ Run the commands that sets your eth interfaces to your zones.
 *   Run the commands that add services to the **public** zone, the **web** zone, the **sales** zone, and the **mail** zone. 
 
 
-Public: 
+ *  Public: 
  
 `sudo firewall-cmd --permanent --zone=public --add-service=http`
 
@@ -274,51 +254,19 @@ Public:
 
 `sudo firewall-cmd --permanent --zone=public --add-service=smtp`
 
-
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image4.png "image_tooltip")
-
-
-
-
 *   Web: 
  
 `sudo firewall-cmd --zone=web --add-service=http`
-
-
-<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image5.png "image_tooltip")
 
 *   Sales 
  
  `sudo firewall-cmd --permanent --zone=sales --add-service=https`
 
-    
-
-<p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image6.png "image_tooltip")
-
-
-Mail 
+ *  Mail 
  
  `sudo firewall-cmd --permanent --zone=mail --add-service=smtp`
 
  `sudo firewall-cmd --permanent --zone=mail --add-service=pop3`
-
-
-
-<p id="gdcalert7" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image7.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert8">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image7.png "image_tooltip")
-
-
 
 
 *   What is the status of http, https, smtp and pop3? 
@@ -328,13 +276,10 @@ Mail
 #### **Add your adversaries to the Drop Zone.**
 
 Run the command that will add all current and any future blacklisted IPs to the Drop Zone. 
- 
 
-<p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image8.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image8.png "image_tooltip")
- 
+`sudo firewall-cmd --permanent --zone=drop --add-source=10.208.56.23` 
+`sudo firewall-cmd --permanent --zone=drop --add-source=135.95.103.76`
+`sudo firewall-cmd --permanent --zone=drop --add-source=76.34.169.118`
 
 #### **Make rules permanent then reload them:**
 
@@ -343,14 +288,7 @@ It's good practice to ensure that your firewalld installation remains nailed up 
 
 *   Run the command that reloads the firewalld configurations and writes it to memory 
  
-
-<p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image9.png "image_tooltip")
- 
-
-
+ `sudo firewall-cmd --reload`
 
 #### **View active Zones**
 
@@ -360,43 +298,22 @@ Now, we'll want to provide truncated listings of all currently **active** zones.
 
 *   Run the command that displays all zone services. 
  
-
-
-<p id="gdcalert10" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image10.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert11">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image10.png "image_tooltip")
- 
-
-
+`sudo firewall-cmd --get-active-zones`
 
 #### **Block an IP address**
 
 
 *   Use a rich-rule that blocks the IP address 138.138.0.3.
 
-    
-
-<p id="gdcalert11" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image11.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert12">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image11.png "image_tooltip")
-
+`sudo firewall-cmd --zone=public --add-rich-rule='rule family="ipv4" source address="138.138.0.3" reject'`
 
 #### **Block Ping/ICMP Requests**
 
 Harden your network against ping scans by blocking icmp echo replies.
 
 
-
 *   Run the command that blocks pings and icmp requests in your public zone. 
 
-
-<p id="gdcalert12" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image12.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert13">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image12.png "image_tooltip")
- 
 
 #### **Rule Check**
 
@@ -404,52 +321,15 @@ Now that you've set up your brand new firewalld installation, it's time to verif
 
 Run the command that lists all of the rule settings. Do one command at a time for each zone.
 
-**_PUBLIC Zone 
+`sudo firewall-cmd --zone=public --list-all`
  
-_**
+`sudo firewall-cmd --zone=drop --list-all`
 
-<p id="gdcalert13" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image13.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert14">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+`sudo firewall-cmd --zone=mail --list-all`
 
+`sudo firewall-cmd --zone=sales --list-all`
 
-![alt_text](images/image13.png "image_tooltip")
-
-
-
-    
-
-<p id="gdcalert14" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image14.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert15">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image14.png "image_tooltip")
-
-
-
-    
-
-<p id="gdcalert15" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image15.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert16">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image15.png "image_tooltip")
-
-
-
-    
-
-<p id="gdcalert16" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image16.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert17">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image16.png "image_tooltip")
-
-
-
-    
-
-<p id="gdcalert17" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image17.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert18">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image17.png "image_tooltip")
-
-
+`sudo firewall-cmd --zone=web --list-all`
 
 
 *   Are all of our rules in place? If not, then go back and make the necessary modifications before checking again. 
@@ -474,21 +354,21 @@ Now, we will work on another lab. Before you start, complete the following revie
 
 1. Name and define two ways an IDS connects to a network. 
  
- **_Answer 1: Network Tap (Test Access Port) - inbound and outbound network traffic flows on separate channels and arrive at the monitoring device in real time. _** 
+ - Network Tap (Test Access Port) - inbound and outbound network traffic flows on separate channels and arrive at the monitoring device in real time. _** 
  
-**_ Answer 2: SPAN (Switched Port Analyzer) or port mirroring - sends a mirror image of all network packets to another physical port to be analyzed.  
-_**
+ - SPAN (Switched Port Analyzer) or port mirroring - sends a mirror image of all network packets to another physical port to be analyzed.  
+
 2. Describe how an IPS connects to a network. 
  
-**_An IPS is placed inline with the flow of data and can be placed between the firewall and network switch. _** 
+ - An IPS is placed inline with the flow of data and can be placed between the firewall and network switch. 
 
 3. What type of IDS compares patterns of traffic to predefined signatures and is unable to detect Zero-Day attacks? 
  
-**_Signature-based attack_** 
+- Signature-based attack
 
 4. Which type of IDS is beneficial for detecting all suspicious traffic that deviates from the well-known baseline and is excellent at detecting when an attacker probes or sweeps a network?  
  
-**_Anomaly-based attack_** 
+- Anomaly-based attack
 
 
 
@@ -500,49 +380,50 @@ _**
 
     1. A criminal hacker tailgates an employee through an exterior door into a secured facility, explaining that they forgot their badge at home. 
  
-**_Physical_** 
+     - Physical 
 
     2. A zero-day goes undetected by antivirus software.
 
-        **_Application_** 
+     - Application
 
 
     3. A criminal successfully gains access to HR’s database. 
  
-**_Data_** 
+     - Data
 
     4. A criminal hacker exploits a vulnerability within an operating system. 
  
-**_Host/Endpoint Security _** 
+     - Host/Endpoint Security
 
     5. A hacktivist organization successfully performs a DDoS attack, taking down a government website. 
  
-**_Network Security _** 
+     - Network Security 
 
     6. Data is classified at the wrong classification level. 
  
-**_Policy, procedures, and awareness 
-_**
+    - Policy, procedures, and awareness 
+
     7. A state sponsored hacker group successfully firewalked an organization to produce a list of active services on an email server. 
 
 
-**_             Public facing servers are at the perimeter of the network_**
+    - Public facing servers are at the perimeter of the network
 
 
 2. Name one method of protecting data-at-rest from being readable on hard drive. 
  
- **_Answer: Full disk encryption.  
-_**
+   - Full disk encryption  
+
 3. Name one method to protect data-in-transit. 
  
- **_Answer: Virtual Private Network Tunnel (VPN) _**
+   - Virtual Private Network Tunnel (VPN)
+ 
 4. What technology could provide law enforcement with the ability to track and recover a stolen laptop. 
  
- **_Answer: Tracker 
-_**
+   - Tracker 
+
 5. How could you prevent an attacker from booting a stolen laptop using an external hard drive? 
  
- **_Answer: Hard disk encryption_** 
+   - Hard disk encryption
 
 
 
@@ -551,16 +432,82 @@ _**
 
 1. Which type of firewall verifies the three-way TCP handshake? TCP handshake checks are designed to ensure that session packets are from legitimate sources.
 
-**_Circuit-Level Gateway Firewall_**
+  - Circuit-Level Gateway Firewall
+
+2. Which type of firewall considers the connection as a whole? Meaning, instead of looking at only individual packets, these firewalls look at whole streams of packets at one time.
+
+  - Stateful firewalls
+
+3. Which type of firewall intercepts all traffic prior to being forwarded to its final destination. In a sense, these firewalls act on behalf of the recipient by ensuring the traffic is safe prior to forwarding it?
+
+  - Proxy firewalls
+
+4. Which type of firewall examines data within a packet as it progresses through a network interface by examining source and destination IP address, port number, and packet type- all without opening the packet to inspect its contents?
+
+  - Packet filter firewalls
+  
+5. Which type of firewall filters based solely on source and destination MAC address?
+
+  - MAC Layer Filtering Firewall
+
+### Bonus Lab: "Green Eggs & SPAM"
+ 
+This bonus activity is a culmination of the topics and tools covered during the following Unit 11 activities:
+ 
+- Alert - FTP File Extraction
+- Alert - ET INFO Executable Download
+- Alert - C2 Beacon
+- Investigation, Analysis, and Escalation Activity
+- Threat Hunting - Cyber Threat Intelligence
+ 
+In this activity, you will target spam, uncover its whereabouts, and attempt to discover the intent of the attacker.
+ 
+- You will assume the role of a Jr. Security administrator working for the Department of Technology for the State of California.
+ 
+- As a junior administrator, your primary role is to perform the initial triage of alert data: the initial investigation and analysis followed by an escalation of high priority alerts to senior incident handlers for further review.
+ 
+- You will work as part of a Computer and Incident Response Team (CIRT), responsible for compiling **Threat Intelligence** as part of your incident report.
+ 
+
+#### Instructions
+
+Log into the Security Onion VM and use the following **Indicator of Attack** to complete this portion of the homework.
+
+Locate the following Indicator of Attack in Sguil:
+
+- **Source IP/Port**: `188.124.9.56:80`
+- **Destination Address/Port**: `192.168.3.35:1035`
+- **Event Message**: `ET TROJAN JS/Nemucod.M.gen downloading EXE payload`
+
+Answer the following questions:
+
+1. What was the indicator of an attack?
+   - Trojan
+
+2. What was the attacker's motivation? 
+   - Steal user credentials
+
+3. Describe observations and indicators that may be related to the perpetrators of the intrusion. Categorize your insights according to the appropriate stage of the cyber kill chain, as structured in the following table.
+
+| TTP | Example | Findings |
+| --- | --- | --- | 
+| **Reconnaissance** |  How did they attacker locate the victim? | Phishing email
+| **Weaponization** |  What was it that was downloaded?| JS/Nemucod trojan
+| **Delivery** |    How was it downloaded?| The trojan was attached to an email inside a zip file. A user opened the file and the malicious JavaScript code ran.
+| **Exploitation** |  What does the exploit do?| Downloads malicious Javascript code (EXE file) 
+| **Installation** | How is the exploit installed?| An executable file is saved to the %TMP% directory 
+| **Command & Control (C2)** | How does the attacker gain control of the remote machine?|Additional trojans are downloaded and installed after the initial Nemucod script is installed.
+| **Actions on Objectives** | What does the software that the attacker sent do to complete it's tasks?| Downloads Fareit to steal users’ credentials, Ursnif to record information about the user and the PC, or other ransomware.
+
+4. What are your recommended mitigation strategies?
+
+Keep software updated, and educate users about phishing emails, and instruct users to not click suspicious links within these emails. 
+
+5. Cite your references here.
+
+https://www.certego.net/en/news/italian-spam-campaigns-using-js-nemucod-downloader/
+https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=JS/Nemucod
+
+---
 
 
-
-1. Which type of firewall considers the connection as a whole? Meaning, instead of looking at only individual packets, these firewalls look at whole streams of packets at one time.
-
-**_Stateful firewalls_**
-
-
-
-1. Which type of firewall intercepts all traffic prior to being forwarded to its final destination. In a sense, these firewalls act on behalf of the recipient by ensuring the traffic is safe prior to forwarding it?
-
-**_Proxy firewalls_**
