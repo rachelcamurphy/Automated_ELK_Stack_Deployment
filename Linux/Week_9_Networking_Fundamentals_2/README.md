@@ -4,18 +4,15 @@ April 24, 2021
 
 Week 9
 
-
-### <sup><strong>0M1i1s1s1i<sub>0</sub>o1n0 010**</sup>
-
 **Issue**: Due to the DoS attack, the Empire took down the Resistance's DNS and primary email servers.
 
 
 
-*   The Resistance's network team was able to build and deploy a new DNS server and mail server. \
+*   The Resistance's network team was able to build and deploy a new DNS server and mail server.
 
-*   The new primary mail server is `asltx.l.google.com` and the secondary should be `asltx.2.google.com`. \
+*   The new primary mail server is `asltx.l.google.com` and the secondary should be `asltx.2.google.com`. 
 
-*   The Resistance (starwars.com) is able to send emails but is unable to receive any. \
+*   The Resistance (starwars.com) is able to send emails but is unable to receive any. 
 
 
 Your mission:
@@ -24,15 +21,8 @@ Your mission:
 
 *   Determine and document the **mail servers** for starwars.com using NSLOOKUP.
     *   Used the following command to determine which mail servers are in use by starwars.com ` nslookup -type=MX starwars.com`
-
-    
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image1.png "image_tooltip")
- \
-
+ 
+![image](https://user-images.githubusercontent.com/76081641/119240297-4669a200-bb14-11eb-8da1-a9e12a50ee84.png)
 
 *   Explain why the Resistance isn't receiving any emails.
     *   The Resistance is not receiving any emails because the network team configured the new primary mail server as `asltx.l.google.com ` and the secondary server as `asltx.2.google.com` . In contrast, the DNS mail records do not indicate either domain, which is the reason why The Resistance is not receiving any email. 
@@ -40,16 +30,12 @@ Your mission:
     *   A corrected DNS record would include the appropriate mail exchangers originally configured by the network team. The primary mail exchanger `asltx.l.google.com `will have a priority level of 1 and the secondary mail exchanger `asltx.2.google.com` will have a priority level of 5. 
     *   Corrected record:
 
-        ```
-sysadmin@UbuntuDesktop:~$ nslookup -type=MX starwars.com
+`sysadmin@UbuntuDesktop:~$ nslookup -type=MX starwars.com
 Server:		8.8.8.8
-Address:	      8.8.8.8#53
+Address:	   8.8.8.8#53
 Non-authoritative answer:
 starwars.com	mail exchanger = 1 asltx.l.google.com.
-starwars.com	mail exchanger = 5 asltx.2.google.com.
-```
-
-
+starwars.com	mail exchanger = 5 asltx.2.google.com.`
 
 
 ### Mission 2
@@ -58,11 +44,11 @@ starwars.com	mail exchanger = 5 asltx.2.google.com.
 
 
 
-*   Many of the alert bulletins are being blocked or going into spam folders. \
+*   Many of the alert bulletins are being blocked or going into spam folders. 
 
-*   This is probably due to the fact that theforce.net changed the IP address of their mail server to 45.23.176.21 while your network was down. \
+*   This is probably due to the fact that theforce.net changed the IP address of their mail server to 45.23.176.21 while your network was down. 
 
-*   These alerts are critical to identify pending attacks from the Empire. \
+*   These alerts are critical to identify pending attacks from the Empire. 
 
 
 Your mission:
@@ -72,21 +58,17 @@ Your mission:
 *   Determine and document the SPF for theforce.net using NSLOOKUP.
     *   Utilized the following command to determine the SPF for the force.net
 
-            ` nslookup -type=txt theforce.net` \
+            ` nslookup -type=txt theforce.net`
 
 
 *   Explain why the Force's emails are going to spam.
     *   The Force’s emails are going to spam because the SPF (Sender Policy Framework) DNS record does not show the IP address `45.23.176.21`. 
-        *   An SPF record only accepts emails from trusted IP mail servers and will reject the rest.  \
+        *   An SPF record only accepts emails from trusted IP mail servers and will reject the rest.  
 
 *   Document what a corrected DNS record should be.
     *   Corrected DNS record with the IP address of the mail server:
-
-        ```
-theforce.net	text = "v=spf1 a mx mx:smtp.secureserver.net include:aspmx.googlemail.com ip4:104.156.250.80 ip4:45.63.15.159 ip4:45.63.4.215 ip4:45.23.176.21"
-```
-
-
+    
+`theforce.net	text = "v=spf1 a mx mx:smtp.secureserver.net include:aspmx.googlemail.com ip4:104.156.250.80 ip4:45.63.15.159 ip4:45.63.4.215 ip4:45.23.176.21"`
 
 
 ### Mission 3
@@ -108,31 +90,18 @@ Your mission:
 
     *   Use the command `nslookup -type=CNAME www.theforce.net`
 
-    
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image2.png "image_tooltip")
- \
-
 
 *   Explain why the sub page of resistance.theforce.net isn't redirecting to theforce.net.
-    *   The sub page of resistance.theforce.net is not a canonical name for theforce.net. A canonical name (CNAME) is like an alias for a website.  \
+    *   The sub page of resistance.theforce.net is not a canonical name for theforce.net. A canonical name (CNAME) is like an alias for a website.  
 
 *   Document what a corrected DNS record should be.
-    *   A corrected DNS record would include the canonical name resistance.theforce.net as shown below.  \
+    *   A corrected DNS record would include the canonical name resistance.theforce.net as shown below.  
 
-
-        ```
-Server:	8.8.8.8
+`Server:	8.8.8.8
 Address:	8.8.8.8#53
 Non-authoritative answer:
 www.theforce.net	       canonical name = theforce.net.
-resistance.theforce.net  canonical name = theforce.net
-```
-
-
+resistance.theforce.net  canonical name = theforce.net`
 
 
 ## Mission 4
@@ -141,11 +110,11 @@ resistance.theforce.net  canonical name = theforce.net
 
 
 
-*   Fortunately, the DNS server for princessleia.site is backed up and functioning. \
+*   Fortunately, the DNS server for princessleia.site is backed up and functioning. 
 
-*   However, the Resistance was unable to access this important site during the attacks and now they need you to prevent this from happening again. \
+*   However, the Resistance was unable to access this important site during the attacks and now they need you to prevent this from happening again. 
 
-*   The Resistance's networking team provided you with a backup DNS server of: ns2.galaxybackup.com. \
+*   The Resistance's networking team provided you with a backup DNS server of: ns2.galaxybackup.com. 
 
 
 Your mission:
@@ -159,32 +128,15 @@ Your mission:
 
      `nslookup -type=NS princessleia.site`
 
-
-    
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image3.png "image_tooltip")
-
-
 *   Document how you would fix the DNS record to prevent this issue from happening again.
     *   To ensure site redundancy, implement a backup DNS name server for princessleia.site.
 
-        ```
-Server:	8.8.8.8
+`Server:	8.8.8.8
 Address:	8.8.8.8#53
 Non-authoritative answer:
 princessleia.site	nameserver = ns25.domaincontrol.com.
 princessleia.site	nameserver = ns26.domaincontrol.com.
-princessleia.site nameserver = ns2.galaxybackup.com
-```
-
-
-
-         \
-
-
+princessleia.site nameserver = ns2.galaxybackup.com`
 
 
 ### <sup><strong><em>⚡≡⚡≡⚡≡⚡M⚡i<sub>⚡</sub>s<sub>⚡</sub>s⚡i⚡o⚡n⚡≡<sub>⚡</sub>5⚡_**</sup>
@@ -193,18 +145,18 @@ princessleia.site nameserver = ns2.galaxybackup.com
 
 
 
-*   You have been provided a network map with a list of planets connected between Batuu and Jedha. \
+*   You have been provided a network map with a list of planets connected between Batuu and Jedha. 
 
-*   It has been determined that the slowness is due to the Empire attacking Planet N. \
+*   It has been determined that the slowness is due to the Empire attacking Planet N. 
 
 
 Your Mission:
 
 
 
-*   View the Galaxy Network Map and determine the OSPF shortest path from Batuu to Jedha. \
+*   View the Galaxy Network Map and determine the OSPF shortest path from Batuu to Jedha. 
 
-*   Confirm your path doesn't include Planet N in its route. \
+*   Confirm your path doesn't include Planet N in its route. 
 
 *   Document this shortest path so it can be used by the Resistance to develop a static route to improve the traffic.
 
@@ -230,83 +182,29 @@ Your Mission:
 
 
 
-*   Figure out the Dark Side's secret wireless key by using Aircrack-ng. \
+*   Figure out the Dark Side's secret wireless key by using Aircrack-ng. 
 aircrack-ng -w /usr/share/wordlists/rockyou.txt darkside.pcap 
 
-    ```
-aircrack-ng -w /usr/share/wordlists/rockyou.txt darkside.pcap 
-```
+  
+`aircrack-ng -w /usr/share/wordlists/rockyou.txt darkside.pcap`
 
 
 
-        The secret wireless key is dictionary: \
-
-
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image4.png "image_tooltip")
+        The secret wireless key is dictionary. 
 
 
 *   Use the Dark Side's key to decrypt the wireless traffic in Wireshark.
 
-    Input this key into wireshark to decrypt the traffic:
+    Input this key into wireshark to decrypt the traffic.
+
+    *   Three decrypted arp packets in Wireshark: 
 
 
-    
-
-<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image5.png "image_tooltip")
- \
-
-
-    *   Three decrypted arp packets in Wireshark: \
-
-
-<p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image6.png "image_tooltip")
-
-    *   Host IP Addresses and MAC Addresses by looking at the decrypted ARP traffic. \
-
-
-<p id="gdcalert7" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image7.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert8">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image7.png "image_tooltip")
+    *   Host IP Addresses and MAC Addresses by looking at the decrypted ARP traffic. 
 
 *   Document these IP and MAC Addresses, as the resistance will use these IP addresses to launch a retaliatory attack: 
     *   Three ARP packets were discovered after analyzing the decrypted darkside.pcap file in Wireshark. 
         *   Looking through all three arp packets for the Host IP addresses and MAC addresses:
-
-            
-
-<p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image8.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image8.png "image_tooltip")
-
-
-
-            
-
-<p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image9.png "image_tooltip")
-
-
-
-            
-
-<p id="gdcalert10" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image10.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert11">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image10.png "image_tooltip")
-
 
 *   Documentation of decrypted MAC & IP addresses:
 
@@ -334,40 +232,4 @@ aircrack-ng -w /usr/share/wordlists/rockyou.txt darkside.pcap
    </td>
   </tr>
 </table>
-
-
- \
-
-
-
-### <sup>✨</sup>M<sup>✨</sup>i<sup>✨</sup>s<sup>✨</sup>s<sup>🌟</sup>i<sub>✨</sub>o<sup>🌟</sup>n<sup>✨</sup> <sub>✨</sub>7<sup>✨</sup>
-
-As a thank you for saving the galaxy, the Resistance wants to send you a secret message!
-
-Your Mission:
-
-
-
-*   View the DNS record from Mission #4. \
-
-
-<p id="gdcalert11" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image11.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert12">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image11.png "image_tooltip")
-
-
-     \
-
-
-*   Take a screenshot of the results. \
-
-
-<p id="gdcalert12" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image12.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert13">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image12.png "image_tooltip")
-
-
- \
 
