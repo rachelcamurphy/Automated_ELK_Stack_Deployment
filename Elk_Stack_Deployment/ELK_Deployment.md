@@ -57,10 +57,10 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | No                 | `<your home IP>`     |
-| Web-1    | Yes                  | home IP & 10.0.0.4|
-| Web-2    | Yes                  | home IP & 10.0.0.4|
-| Elk-Server | No | 10.0.0.4 |
+| Jump Box | Yes                 | `<your home IP>`     |
+| Web-1    | Yes                  | `<home IP>` & 10.0.0.4|
+| Web-2    | Yes                  | `<home IP>` & 10.0.0.4|
+| Elk-Server | Yes | 10.0.0.4 |
 
  The Jump-Box Provisioner has Network Security Group rules that only allows ssh connections from your home IP. 
  The DVWA webservers can be accessed from HTTP port 80. The Elk-Server can be accessed via SSH (Secure Shell) from the Jump-Box Provisioner. 
