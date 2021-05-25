@@ -128,6 +128,7 @@ wget https://github.com/rachelcamurphy/Cybersecurity_BootCamp/blob/main/Elk_Stac
 ```
 wget https://github.com/rachelcamurphy/Cybersecurity_BootCamp/blob/main/Elk_Stack_Deployment/Ansible/filebeat-playbook.yml
 ```
+Run the following command to install filebeat on your webservers.
 ```
 ansible-playbook filebeat-playbook.yml
 ```
@@ -135,6 +136,8 @@ ansible-playbook filebeat-playbook.yml
 ```
 wget https://github.com/rachelcamurphy/Cybersecurity_BootCamp/blob/main/Elk_Stack_Deployment/Ansible/metricbeat-playbook.yml
 ```
+Run the following command to install metricbeat on your webservers.
+
 ```
 ansible-playbook metricbeat-playbook.yml
 ```
