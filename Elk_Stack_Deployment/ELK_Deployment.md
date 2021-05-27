@@ -2,11 +2,15 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![TODO: Update the path with the name of your diagram](Images/diagram_filename.png)
+![alt text](https://github.com/rachelcamurphy/Cybersecurity_BootCamp/blob/main/Elk_Stack_Deployment/Network_Diagrams/ELK-Stack-Network-Diagram.png?raw=true)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _TODO: Enter the playbook file._
+[Install Elk](https://github.com/rachelcamurphy/Cybersecurity_BootCamp/blob/main/Elk_Stack_Deployment/Ansible/install-elk.yml)
+
+[Filebeat Playbook](https://github.com/rachelcamurphy/Cybersecurity_BootCamp/blob/main/Elk_Stack_Deployment/Ansible/filebeat-playbook.yml)
+
+[Metricbeat Playbook](https://github.com/rachelcamurphy/Cybersecurity_BootCamp/blob/main/Elk_Stack_Deployment/Ansible/metricbeat-playbook.yml)
 
 This document contains the following details:
 - Description of the Topology
@@ -53,10 +57,10 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | No                 | `<your home IP>`     |
-| Web-1    | Yes                  | home IP & 10.0.0.4|
-| Web-2    | Yes                  | home IP & 10.0.0.4|
-| Elk-Server | No | 10.0.0.4 |
+| Jump Box | Yes                 | `<your home IP>`     |
+| Web-1    | No                  | `<home IP>` & 10.0.0.4|
+| Web-2    | No                  | `<home IP>` & 10.0.0.4|
+| Elk-Server | Yes | 10.0.0.4 |
 
  The Jump-Box Provisioner has Network Security Group rules that only allows ssh connections from your home IP. 
  The DVWA webservers can be accessed from HTTP port 80. The Elk-Server can be accessed via SSH (Secure Shell) from the Jump-Box Provisioner. 
@@ -74,7 +78,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![alt text](https://github.com/rachelcamurphy/Cybersecurity_BootCamp/blob/main/Elk_Stack_Deployment/Images/docker_ps_output.PNG)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -100,7 +104,7 @@ Copy the filebeat-config from the source: /etc/ansible/files/filebeat-config.yml
 to the destination configuration  dest:  /etc/filebeat/filebeat.yml
 - Which file do you update to make Ansible run the playbook on a specific machine?
 You can run the playbook on specific machines by updating the hosts file in /etc/ansible/hosts. 
-- How do I specify which machine to install the ELK server on versus which to install   Filebeat on? You will modify the individual playbook files with the name of your hosts. 
+- How do I specify which machine to install the ELK server on versus which to install Filebeat on? You will modify the individual playbook files with the name of your hosts. 
 - Which URL do you navigate to in order to check that the ELK server is running?
 Navigate to http://[your.ELK-VMExternal.IP]:5601/app/kibana 
 
@@ -109,17 +113,38 @@ As a **Bonus**, provide the specific commands the user will need to run to downl
 Step by step instructions in order to set up the elk server: 
 
 1. Configure Elk VM with Docker container
-`curl https://githubusercontent//path to file in my github repo`
+```
+wget https://github.com/rachelcamurphy/Cybersecurity_BootCamp/blob/main/Elk_Stack_Deployment/Ansible/install-elk.yml
+```
 2. Download Filebeat configuration file 
-``
+```
+wget https://github.com/rachelcamurphy/Cybersecurity_BootCamp/blob/main/Elk_Stack_Deployment/Ansible/filebeat-config.yml
+```
 3. Download Metricbeat configuration file
-``
+```
+wget https://github.com/rachelcamurphy/Cybersecurity_BootCamp/blob/main/Elk_Stack_Deployment/Ansible/metricbeat-config.yml
+```
 4. Install and launch filebeat playbook
-```ansible-playbook filebeat-playbook.yml```
+```
+wget https://github.com/rachelcamurphy/Cybersecurity_BootCamp/blob/main/Elk_Stack_Deployment/Ansible/filebeat-playbook.yml
+```
+Run the following command to install filebeat on your webservers.
+```
+ansible-playbook filebeat-playbook.yml
+```
 5. Install and launch metricbeat playbook
-```ansible-playbook metricbeat-playbook.yml```
+```
+wget https://github.com/rachelcamurphy/Cybersecurity_BootCamp/blob/main/Elk_Stack_Deployment/Ansible/metricbeat-playbook.yml
+```
+Run the following command to install metricbeat on your webservers.
+
+```
+ansible-playbook metricbeat-playbook.yml
+```
 6. Go to Kibana site and add log data for filebeat and metricbeat
 
+
+---
 SSH into the Jump-Box Provisioner
 `ssh RedAdmin@52.151.204.167`
 
@@ -153,4 +178,4 @@ Start the docker container `sudo docker start elk`
 
 Attach to the container `sudo docker exec -it elk bash`
 
-Run the playbookfiles to install beats
+Run the playbookfiles to install beats.
