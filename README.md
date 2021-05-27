@@ -7,15 +7,6 @@ This repository includes Linux scripts from the bootcamp coursework and an ELK S
 Topics Covered
 ---
 - Bash Scripting
-- Linux Administration and Hardening
-- Archiving and Logging Data 
-- Advanced Bash (CTF)
-  - John the Ripper
-- Networking Fundamentals 
-    - ping, nmap, Wireshark, nslookup
-- Network Security
-- Cloud Security
-- Azure Virtualization
 ---
 Projects
 ---
