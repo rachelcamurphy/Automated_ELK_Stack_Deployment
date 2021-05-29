@@ -90,7 +90,7 @@ We have installed the following Beats on these machines:
 
 These Beats allow us to collect the following information from each machine:
 - Filebeat collects log data about your webservers file systems such as system.syslog events and system.auth logs. 
-- Metricbeat collects metrics about your webservers such as CPU Usage, Load, Memory Usage, and Network Traffic. An example of the metricbeat data for the Web 1 VM configured in Azure
+- Metricbeat collects metrics about your webservers such as CPU Usage, Load, Memory Usage, and Network Traffic. 
  
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
