@@ -146,14 +146,14 @@ ansible-playbook metricbeat-playbook.yml
 
 ---
 SSH into the Jump-Box Provisioner
-`ssh RedAdmin@52.151.204.167`
+`ssh <Jump-Box Admin>@<Jump-Box IP>`
 
 Start the Docker instance.
-`RedAdmin@Jump-Box-Provisioner:~$ sudo docker start interesting_johnson`
+`<Jump-Box Admin>@Jump-Box-Provisioner:~$ sudo docker start interesting_johnson`
 
 Attach to the docker container.
 
-`RedAdmin@Jump-Box-Provisioner:~$ sudo docker attach <DockerContainerName>`
+`<Jump-Box Admin>@Jump-Box-Provisioner:~$ sudo docker attach <DockerContainerName>`
 or run `sudo docker exec -it <DockerContainerName>`
 
 Locate the ansible directory.
