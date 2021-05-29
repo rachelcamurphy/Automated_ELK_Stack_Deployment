@@ -153,8 +153,8 @@ Start the Docker instance.
 
 Attach to the docker container.
 
-`RedAdmin@Jump-Box-Provisioner:~$ sudo docker attach interesting_johnson`
-or run `sudo docker exec -it <name of your ansible container>`
+`RedAdmin@Jump-Box-Provisioner:~$ sudo docker attach <DockerContainerName>`
+or run `sudo docker exec -it <DockerContainerName>`
 
 Locate the ansible directory.
 
@@ -169,10 +169,6 @@ In the ansible hosts file, add your web server IPs and the IP address of your el
 [elk-server]
 `10.1.0.4 ansible_python_interpreter=/usr/bin/python3`
 ```
-
-SSH into the elk server from the Ansible container. Use the credentials you configured in Azure.
-
-For example: `ssh RedSysadmin@10.1.0.4`
 
 Start the docker container `sudo docker start elk`
 
