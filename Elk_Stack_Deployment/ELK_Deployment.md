@@ -99,14 +99,17 @@ SSH into the control node and follow the steps below:
 - Copy the configuration file from your Ansible container to your web servers.
 - Update the /etc/ansible/hosts file to include the IP addresses of your webservers and your Elk server. 
 - Run the playbook, and navigate to http://[your.ELK-VMExternal.IP]:5601/app/kibana to check that the installation worked as expected. 
-- Which file is the playbook? The filebeat-config Where do you copy it? 
-Copy the filebeat-config from the source: /etc/ansible/files/filebeat-config.yml
-to the destination configuration  dest:  /etc/filebeat/filebeat.yml
+- Which file is the playbook? 
+    - [Install Elk](https://github.com/rachelcamurphy/Cybersecurity_BootCamp/blob/main/Elk_Stack_Deployment/Ansible/install-elk.yml)
+- The filebeat-config Where do you copy it? 
+    - Copy the filebeat-config from the source: /etc/ansible/files/filebeat-config.yml
+      to the destination configuration  dest:  /etc/filebeat/filebeat.yml
 - Which file do you update to make Ansible run the playbook on a specific machine?
-You can run the playbook on specific machines by updating the hosts file in /etc/ansible/hosts. 
-- How do I specify which machine to install the ELK server on versus which to install Filebeat on? You will modify the individual playbook files with the name of your hosts. 
+    - You can run the playbook on specific machines by updating the hosts file in /etc/ansible/hosts. 
+- How do I specify which machine to install the ELK server on versus which to install Filebeat on? 
+   - You will modify the individual playbook files with the name of your hosts. 
 - Which URL do you navigate to in order to check that the ELK server is running?
-Navigate to http://[your.ELK-VMExternal.IP]:5601/app/kibana 
+    - Navigate to http://[your.ELK-VMExternal.IP]:5601/app/kibana 
 
 As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
 
