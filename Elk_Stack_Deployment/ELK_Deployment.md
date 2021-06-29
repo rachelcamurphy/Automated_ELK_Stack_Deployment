@@ -58,8 +58,8 @@ A summary of the access policies in place can be found in the table below.
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
 | Jump Box | Yes                 | `<your home IP>`     |
-| Web-1    | No                  | `<home IP>` & 10.0.0.4|
-| Web-2    | No                  | `<home IP>` & 10.0.0.4|
+| Web-1    | Yes                  | `<home IP>` & 10.0.0.4|
+| Web-2    | Yes                  | `<home IP>` & 10.0.0.4|
 | Elk-Server | Yes | 10.0.0.4 |
 
  The Jump-Box Provisioner has Network Security Group rules that only allows ssh connections from your home IP. 
