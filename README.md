@@ -1,4 +1,4 @@
-Rice University Cybersecurity Bootcamp Coursework
+ELK Stack Deployment Guide 
 ---
 
 This repository includes Linux scripts from the bootcamp coursework and an ELK Stack Deployment Guide. 
